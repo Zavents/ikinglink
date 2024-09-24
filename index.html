@@ -20,9 +20,9 @@
     <meta name="author" content="Zavents">
 
     <!-- CSS Style -->
-    <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/media.css">
-    <link rel="stylesheet" href="./style/inner.css">
+    <link rel="stylesheet" href="./style/style-2.css">
+    <link rel="stylesheet" href="./style/media-2.css">
+    <link rel="stylesheet" href="./style/inner-2.css">
 
     <!-- Bootstrap 5.3.3 -->
     <link href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,13 +31,1927 @@
     <link rel="stylesheet" href="./swiper-11.1.9/package/swiper.min.css">
     <link rel="stylesheet" href="./swiper-11.1.9/package/swiper-bundle.min.css">
 
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+<style>
+  :root {
+    --transition-all: all 0.3s ease-in-out;
+    --color-second : #666666;
+  }
+  
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  body{
+    overflow-x: hidden;
+  }
+  
+  html {
+    background: #ffffff;
+    color: black;
+    padding: 0;
+    margin: 0;
+    caret-color: transparent;
+    font-family: "Microsoft Yahei", "微软雅黑", "PingFangSC-Regular", arial, "宋体", sans-serif;
+    overflow-x: hidden;
+  }
+  
+  
+    /* scroller */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .text-base {
+    font-size: 0.89rem;
+    text-align: justify;
+    line-height: 1.4;
+    color: #747474;
+  }
+  
+  .sec-tittle {
+    font-size: 48px;
+  }
+  
+  
+  
+  /* animation link */
+  a:hover {
+    color: #666;  
+  }
+  a:focus,
+  *:focus {
+    outline: none;
+  }
+  a {
+    text-decoration: none;
+    color: #161616;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    text-decoration: none;
+    color: var(--color-emphasize);
+    transition: color 0.3s ease;
+  }
+  a:active,
+  a.clicked {
+    text-decoration: none;
+    color: #161616;
+  }
+  
+  
+  
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .logo {
+    height: 35px;
+    width: 113px;
+  }
+  
+  
+  
+  
+  /* navbar */
+  .nav-link a {
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6666666667);
+    font-weight: 400;
+  }
+  
+  .nav-link a:hover {
+    color: #ffffff;
+  }
+  
+  .nav-box-view {
+    --navbar-item-space-half: 74px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.5s ease;
+    -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+    background-color: rgba(0, 0, 0, 0.82);
+    transition: all 0.275s ease-in-out;
+  }
+  
+  .nav-box-view .navbar {
+    height: 72px;
+  }
+  .nav-box-view .navbar-nav {
+    position: relative;
+    transform: translateX(calc(var(--navbar-item-space-half) + var(--bs-navbar-nav-link-padding-x)));
+  }
+  .nav-box-view .navbar-nav .nav-item {
+    display: inline-block;
+    margin-inline-start: var(--navbar-item-space-half);
+    margin-inline-end: var(--navbar-item-space-half);
+  }
+  
+  .nav-blur-view {
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    background-color: rgba(255, 0, 0, 0.65);
+  }
+  
+  .en img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .vh-right {
+    display: block;
+  }
+  
+  .vh-right-phone {
+    display: none;
+  }
+  
+  .vh-right-web {
+    display: flex;
+  }
+  
+  .vh-right-web .en-title {
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 36px;
+  }
+  
+  
+  
+  .nav-content {
+    padding-top: 60px;
+    
+  }
+  
+  .navbar-toggler {
+    border: none !important;
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+  .navbar-toggler:hover {
+    text-decoration: none;
+  }
+  
+  .spacer {
+    width: auto;
+  }
+  .nav-box-view {
+    
+    --nav-active-height: 250px;
+    background-color: rgba(22, 22, 22, 0.9);
+    transition: all 0.257s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 72px;
+  }
+  .nav-box-view.active {
+    height: var(--nav-active-height);
+  }
+  
+  .navbar-collapse {
+    justify-content: space-between;
+    text-decoration: none;
+  
+  }
+  
+  .nav-item.nav-link a {
+    margin-left: 0;
+    cursor: pointer;
+  }
+  .nav-item.active .subnav-group, .nav-item:hover .subnav-group {
+    display: flex;
+  }
+  
+  .nav-item {
+    display: block;
+  }
+  .nav-item .subnav-group {
+    display: none !important;
+  }
+  .nav-item:hover .subnav-group {
+    display: flex !important;
+  }
+  
+  
+  /* subnav */
+  .subnav-group,
+  .subnav-list {
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .subnav-group li,
+  .subnav-list li {
+    padding: 0;
+    margin: 0;
+  }
+  .subnav-group {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    width: 100%;
+    padding: 30px 30px 30px calc(var(--navbar-item-space-half) + 8px);
+    line-height: 1.4285em;
+    transform: translateY(100%);
+    z-index: 10; /* Ensures it appears above other content */
+  }
+  .subnav-group:before {
+    position: absolute;
+    z-index: 12;
+    content: "";
+    height: 40px;
+    width: 100%;
+    top: -24px;
+    left: 0; /* Adjusted to match the full width */
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .subnav-group .subnav-group-title {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.4285em;
+    white-space: pre;
+  }
+  .subnav-group .subnav-group-item {
+    margin-right: 70px !important;
+  }
+  .nav-item.simpler .subnav-group {
+    display: none !important;
+  }
+  .nav-item.simpler:hover .subnav-group {
+    display: block !important;
+  }
+  .subnav-group.solution {
+    flex-wrap: wrap;
+  }
+  .subnav-group.solution .subnav-group-item {
+    width: 50%;
+    margin-right: 0;
+    padding-right: 40px;
+    margin-bottom: 24px;
+  }
+  .subnav-group.solution .subnav-list .subnav-item {
+    white-space: initial;
+  }
+  
+  .subnav-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .subnav-list .subnav-item {
+    white-space: pre;
+    font-size: 12px;
+    line-height: 1.4285em;
+    margin: 6px 0;
+  }
+  .subnav-list .subnav-item > a {
+    color: #fff;
+    opacity: 0.7;
+  }
+  .subnav-list .subnav-item.active > a {
+    opacity: 1;
+  }
+  
+  
+  
+  /* inner header incon putting this on style.css incase inner.css doesnt read by server */
+  .inner-header{
+    background-color: rgba(0,0,0,1);
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  .inner-header-icon{
+    color: #ffffff;
+    height: 48px;
+    font-size:25px;
+    text-align: center;
+    width: 0px!important;
+    float:right;
+    position: relative;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+    -o-transition: background 0.5s;
+    transition: background 0.5s;
+  }
+  .inner-header-icon:hover{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+  .inner-header-icon span{
+    position: absolute;
+    left: calc((100% - 25px) / 2);
+    top: calc((100% - 2px) / 2);
+    width: 25px;
+    height: 2px;
+    background-color: rgba(255,255,255,1);
+  }
+  .inner-header-icon span:nth-child(1){
+    transform: translateY(8px) rotate(0deg);
+  }
+   
+  .inner-header-icon span:nth-child(2){
+    opacity: 0;
+  }
+   
+  .inner-header-icon span:nth-child(3){
+    transform: translateY(-8px) rotate(0deg);
+  }
+   
+   
+  .inner-header-icon-click span:nth-child(1){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: clickfirst;
+    }
+   
+  .inner-header-icon-click span:nth-child(2){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: clicksecond;
+  }
+   
+  .inner-header-icon-click span:nth-child(3){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: clickthird;
+    }
+   
+   
+  @keyframes clickfirst {
+    0% {
+      transform: translateY(8px) rotate(0deg);
+      
+    }
+   
+    100% {
+      transform: translateY(0) rotate(45deg);
+    }
+  }
+  @keyframes clicksecond {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+   
+  @keyframes clickthird {
+    0% {
+      transform: translateY(-8px) rotate(0deg);
+    }
+   
+    100% {
+      transform: translateY(0) rotate(-45deg);
+    }
+  }	
+   
+  .inner-header-icon-out span:nth-child(1){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: outfirst;
+    }
+   
+  .inner-header-icon-out span:nth-child(2){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: outsecond;
+  }
+  .inner-header-icon-out span:nth-child(3){
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: outthird;
+    }
+   
+  @keyframes outfirst {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+    }
+   
+    100% {
+      transform: translateY(-8px) rotate(0deg);
+    }
+  }
+   
+  @keyframes outsecond {
+    0% {
+      opacity: 0;
+    }
+   
+    100% {
+      opacity: 1;
+    }
+  }
+   
+  @keyframes outthird {
+    0% {
+      transform: translateY(0) rotate(45deg);
+    }
+   
+    100% {
+      transform: translateY(8px) rotate(0deg);
+    }
+  }
+   
+  .inner-nav{
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    display: none;
+  }
+  .inner-nav a{
+    display: inline-block;
+    line-height: 50px;
+    text-decoration: none;
+    width: 80%;
+    margin-left: 10%;
+    color: #FFFFFF;
+    border-bottom: solid 1px rgba(255,255,255,0.3);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    font-weight:300;
+  }
+  .inner-nav a:hover{
+    color: rgba(255,255,255,0.4);
+    border-bottom: solid 1px rgba(255,255,255,0.2);
+  }
+  /* inner header ends */
+  
+  
+  /* slider  */
+  .swiper-container {
+    width: 100%;
+    background-color: #eee;
+    
+  }
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .swiper-pagination {
+    margin-right: 15%;
+  }
+  .swiper-pagination-bullet {
+    width: 7px; 
+    height: 7px;
+    border-radius: 100%;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    border: 4px solid #ffffff;
+  }
+  .ani-slide {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  .navigation-manual{
+    position:absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+  
+  }
+  .manual-btn:not(:last-child){
+      margin-right: 10px;
+  }
+  .manual-btn:active{
+      background: white;
+  } 
+  
+  #radio1:checked ~ .first{
+      margin-left: 0;
+  }
+  #radio2:checked ~ .first{
+      margin-left: -20%;
+  }
+  #radio3:checked ~ .first{
+      margin-left: -40%;
+  }
+  
+  
+  /* stuff */
+  
+  
+  .box{
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #3a3a3a;
+    border-radius: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+  }
+  
+  .box-bg{
+    background: rgba(8, 8, 8, 0.06);
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+  }
+  .title{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 38px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .label{
+    width: 106px;
+    height: 28px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    background-color: #c5100b;
+    border-radius: 14px;
+    margin: 0 auto;
+  }
+  .label::after{
+      content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: text-bottom;
+    border-radius: 50%;
+    background: #fff url("./assets/images/ai-label-arrow@2x.webp") no-repeat scroll center;
+    transform: translateY(-1px);
+    background-size: cover;
+  }
+  
+  .icon img{
+    width: 55%;
+  }
+  .desc{
+    font-size: 20px;
+  }
+  
+  .gambar{
+    margin-left: 270px ;
+    margin-top: -64px;
+  }
+  
+  
+  .bg-left {
+    z-index: 3;
+    left: 0;
+    width: 56vw;
+    background: url("./assets/images/ct-bg-left.webp") no-repeat scroll right center;
+    background-size: cover;
+  }
+  
+  .bg-right {
+    right: 0;
+    width: 44vw;
+    background: url("./assets/images/ct-bg-right.webp") no-repeat scroll right center;
+    background-size: cover;
+  }
+  
+  #enjoy {
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .desc-chat {
+    font-size: 28px; 
+    font-weight: 400;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 5;
+  }
+  
+  .bg-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  
+  .chat {
+    border-radius: 60px 60px 60px 0px;
+    display: inline-block; /* atau inline-flex */
+    color: white;
+    padding: 7px 34px 7px 34px;
+  }
+  
+  .dark-ai{
+    color: #fff;
+    background-image: url("./assets/images/ai-background@2x.webp");
+    background-size: cover;
+    object-fit: cover;
+    background-position: center center;
+    width: 100%;
+  }
+  
+  .title-ai {
+    font-size: 42px; 
+    font-weight: 500;
+  }
+  
+  .col-gambar {
+    background-image: url("./assets/images/ai-bailing@2x.webp");
+      background-repeat: no-repeat;
+      background-size: 276px 172px;
+      background-position: right bottom;
+  }
+  #hardware {
+    background-image: url("./assets/images/core-background.png@2x.webp");
+    background-size: cover;
+    object-fit: cover;
+    background-position: center center;
+    width: 100%;
+  }
+  
+  .title-core {
+    font-size: 98px; 
+  }
+  
+  .desc-core {
+    font-size: 42px; 
+  }
+  
+  #smarthome {
+    background-image: url("./assets/images/home-core-bg@2x.webp");
+    background-size: cover;
+    object-fit: cover;
+    background-position: center center;
+    width: 100%;
+  }
+  
+  .title-smart  {
+    font-size: 66px;
+  }
+  
+  
+  
+  /* smartwireless */
+  #smartwire {
+    background: #E9E9E9;
+  }
+  
+  .text-net {
+    font-size: 36px; 
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+  }
+  
+  .text-net-desc {
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+    font-weight: 400 !important;
+    padding-top: 110px;
+    font-size: 22px;
+  }
+  
+  .text-net2 {
+    font-size: 36px; 
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+  }
+  
+  .text-net3 {
+    font-size: 36px; 
+    font-weight: 700;
+    left: 50%; 
+    max-width: 300px !important;
+    transform: translateX(-46%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+  }
+  
+  .text-net1 {
+    max-width: 270px !important;
+  }
+  
+  .net2 {
+    margin-left: -200px !important; 
+  }
+  
+  .net2 .g1 {
+    position: relative;
+  }
+  .net2 .g2 {
+    position: relative; 
+    width: 109% !important;
+  }
+  
+  .imgnet {
+    right: 20px;
+    z-index: -1;
+    width: 57%;  
+  }
+  
+  
+  /* plc */
+  #plc {
+    background: #000  url("./assets/images/plc-bg@2x.webp") no-repeat scroll center bottom !important;
+    height: 1000px;
+  }
+  
+  .desc-plc {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+  .title-plc {
+    font-size: 86px;
+  }
+  
+  
+  
+  /* Uniq-apps <<< */
+  .uniq-apps .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  .uniq-apps .app-intro .title-u {
+      font-size: 38px;
+      line-height: 1.6em;
+    }
+  
+  
+  
+  
+  .uniq-apps {
+    background-color: #121818;
+    background-image: url("./assets/images/uniq-apps-bg@2x.webp");
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  .uniq-apps .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .uniq-apps .app-intro-wrapper {
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 242px;
+      margin-right: 70px;
+      overflow: hidden;
+  }
+  .uniq-apps .app-intro {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    transition: var(--transition-all);
+  }
+  .uniq-apps .app-intro li {
+    width: 266px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  .uniq-apps .app-intro .title {
+    font-size: 38px;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+  }
+  .uniq-apps .app-intro .desc {
+    font-size: 20px;
+    line-height: 1.75em;
+  }
+  .uniq-apps .slider {
+    position: relative;
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+  }
+  .uniq-apps .slider .app-thumbs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .uniq-apps .slider .app-thumbs li {
+    width: 330px;
+    margin-right: 30px;
+    transition: all 0.275s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .uniq-apps .slider .app-thumbs li img {
+    width: 100%;
+    border-radius: 24px;
+  }
+  .uniq-apps .slider .app-thumbs li:first-child {
+    width: 400px;
+  }
+  .uniq-apps .slider .controls {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 430px;
+    top: 475px;
+    width: 330px;
+  }
+  .uniq-apps .slider .controls .indicator {
+    display: flex;
+  }
+  .uniq-apps .slider .controls .indicator li {
+    --indicator-color: #666666;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    color: rgb(0 0 0 / 0%);
+    margin-right: 10px;
+    cursor: pointer;
+    transition: var(--transition-all);
+  }
+  .uniq-apps .slider .controls .indicator li:before, .uniq-apps .slider .controls .indicator li:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    content: "";
+    display: block;
+    transition: var(--transition-all);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .uniq-apps .slider .controls .indicator li::before {
+    box-sizing: border-box;
+    border: 0px solid var(--indicator-color);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .uniq-apps .slider .controls .indicator li::after {
+    box-sizing: border-box;
+    background: var(--indicator-color);
+  }
+  .uniq-apps .slider .controls .indicator li:hover, .uniq-apps .slider .controls .indicator li.active {
+    --indicator-color: #c5100b;
+  }
+  .uniq-apps .slider .controls .indicator li:hover:before, .uniq-apps .slider .controls .indicator li.active:before {
+    width: 20px;
+    height: 20px;
+    border-width: 1px;
+  }
+  .uniq-apps .slider .controls .indicator li:hover:after, .uniq-apps .slider .controls .indicator li.active:after {
+    width: 8px;
+    height: 8px;
+  }
+  .uniq-apps .slider .controls .btns a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    background-size: cover;
+    overflow: hidden;
+    margin-left: 10px;
+    transition: var(--transition-all);
+  }
+  .uniq-apps .slider .controls .btns a > span {
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    background: no-repeat scroll center;
+    background-size: contain;
+    background-image: url("./assets/images/uniq-apps-arrow-def.svg");
+    font-size: 0;
+    line-height: 0;
+  }
+  .uniq-apps .slider .controls .btns a:hover {
+    background-color: #c4140c;
+    }
+  .uniq-apps .slider .controls .btns a:hover > span {
+    background-image:  url("./assets/images/uniq-apps-arrow-act.svg") ;
+  }
+  .uniq-apps .slider .controls .btns .next {
+    transform: rotate(180deg);
+  }
+  
+  .uniqap ul {
+    list-style-type: none;
+    padding-left: 0; 
+  }
+  
+  .section ul, .section li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  
+  /* footer */
+  .footer {
+    background-color: #191919;
+  }
+  .footer a {
+    color: inherit;
+  }
+  .footer a:hover {
+    opacity: 0.6;
+  }
+  .footer .container {
+    padding: 24px 0 20px;
+  }
+  .meta-list {
+    display: flex;
+    height: 84px;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .meta-list li {
+    margin-right: 32px;
+  }
+  .footer .meta-list .titlee {
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-bottom: 16px;
+  }
+  .sub {
+    font-size: 14px;
+    line-height: 18px;
+    color: #adadad;
+  }
+  .app-list {
+    display: flex;
+    height: 84px;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .app-list li {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  .app-list li:first-child {
+    margin-right: 90px;
+  }
+  .app-list li:first-child:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    right: -45px;
+    height: 80%;
+    border-right: 1px dashed #4d4d4d;
+  }
+  .app-list li .srcode {
+    margin-right: 16px;
+  }
+  .app-list li .srcode img {
+    width: 64px;
+    height: 64px;
+  }
+  .footer .app-list li .titlee {
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  .footer .app-list li .sub {
+    font-size: 12px;
+    line-height: 18px;
+    color: #999999;
+  }
+  .divider {
+    border-top: 1px solid #4d4d4d;
+    margin-top: 24px;
+    margin-bottom: 20px;
+  }
+  .site-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .site-links li {
+    margin-left: 1.5em;
+  }
+  .site-links a {
+    color: #999999;
+    text-decoration: none;
+  }
+  .copyright, .copyright a {
+    color: #adadad;
+    font-size: 14px;
+    margin-bottom: 1em;
+    text-decoration: none;
+  }
+  
+  
+  
+  /* solution thing */
+  .solution {
+    --case-card-width: 1296px;
+    --case-thumb-width: 453px;
+  }
+  .title-s {
+    font-size: 48px; 
+    font-weight: 500;
+  }
+  
+  
+  .solution .content {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .solution .case-list-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .solution .case-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .solution .case-list li {
+    width: var(--case-card-width);
+    height: 505px;
+    margin-right: 32px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+  .solution .case-list li > .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .solution .case-list li > .wrapper .thumb {
+    width: var(--case-thumb-width);
+    margin-right: 40px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #eee;
+  }
+  .solution .case-list li > .wrapper .thumb img {
+    width: 100%;
+    height: auto;
+  }
+  .solution .case-list li > .wrapper .detail {
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+  }
+  .solution .case-list li > .wrapper .title {
+    margin-bottom: 20px;
+  }
+  .solution .case-list li > .wrapper .title .main {
+    display: inline-block;
+    font-size: 38px;
+    line-height: 1.4em;
+    margin-right: 30px;
+    font-weight: 500;
+  }
+  .solution .case-list li > .wrapper .title .second {
+    display: inline-block;
+    font-size: 32px;
+    line-height: 1.4em;
+    color: var(--color-second);
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+  .solution .case-list li > .wrapper .desc {
+    font-size: 20px;
+    color: var(--color-second);
+    line-height: 1.9em;
+    width: 80%;
+  }
+  .solution .control {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - var(--case-thumb-width) - 40px);
+  }
+  .solution .control .thumb-list-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .solution .control .thumb-list {
+    display: flex;
+    transition: var(--transition-all);
+  }
+  .solution .control .thumb-item {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: calc((100% - 40px) / 3);
+    margin-right: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #eee;
+  }
+  .solution .control .thumb-item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .solution .control .navigator {
+    margin-bottom: 40px;
+    text-align: right;
+  }
+  .solution .control .navigator a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    font-size: 0;
+    line-height: 0;
+    width: 140px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid #c5100b;
+    box-sizing: border-box;
+    transition: var(--transition-all);
+  }
+  .solution .control .navigator a > span {
+    display: inline-block;
+    background: url("./assets/images/solution-arrow-def.svg") no-repeat scroll center;
+    background-size: contain;
+    width: 48px;
+    height: 18px;
+  }
+  .solution .control .navigator a:hover {
+    background-color: #c5100b;
+  }
+  .solution .control .navigator a:hover > span {
+    background-image: url("./assets/images/solution-arrow-act.svg");
+  }
+  .solution .control .navigator .next > span {
+    transform: rotate(180deg);
+  }
+  
+  
+  
+
+/* over pc */
+
+@media (min-width: 1890px) {
+  .swiper-slide img {
+    width: 100%;  
+    max-width: 100%;
+    height: 979.98px;
+    object-fit: cover;  
+    object-position: center;  
+    overflow: hidden;
+  }
+  }
+  
+  @media screen and (max-width:1500px) {
+  
+  
+  .nav-box-view {
+  --navbar-item-space-half: 74px;
+  }
+  
+  
+  }
+  /* pc */
+  @media screen  and (max-width:1400px) {
+  
+  
+  .nav-box-view {
+  --navbar-item-space-half: 40px;
+  }
+  .text-net1 {
+      max-width: 10000px;
+  }
+  
+  .imgnet {
+    right: 20px;
+    z-index: -1;
+    width: 100%;  
+  }
+  }
+  
+  
+    /* laptop */
+  @media screen and (max-width:1200px) {
+  .nav-box-view {
+    --navbar-item-space-half: 40px;
+  }
+  
+  .uniq-apps .slider .controls {
+    left: 360px;
+    top: 400px;
+    width: 300px;
+    }
+  
+  }
+  
+  
+  
+  @media (max-width: 991px) {
+  .uniq-apps .slider .controls {
+    left: 100px;
+    top: 320px;
+    width: 300px;
+  }
+  
+  .solution .control .thumb-list-container {
+    width: 300%;
+  }
+  
+  .solution .control .navigator a { 
+    width: 40% !important;
+    margin-left: 0px !important;
+  }
+  }
+  
+  @media (min-width: 640px) and (max-width: 767px) {
+  .solution .case-list li > .wrapper .detail  {
+    display:none;
+  }
+  .solution .case-list li > .wrapper .thumb  {
+    margin-right: 0px;
+    margin-left: 30px;
+  }
+  }
+  
+  @media (max-width: 767px) {
+  .uniq-apps .slider .controls {
+    left: -50px;
+    top: 240px;
+    width: 300px;
+  }
+  
+  .solution .case-list li > .wrapper .detail  {
+    margin-top: 15px !important;
+  }
+  
+  .solution .case-list li > .wrapper .title {
+    margin-bottom: 5px ;
+  }
+  
+  .solution .case-list{
+    margin-bottom: 50px;
+  }
+  .solution .control {
+    position: relative !important;
+    width: 33%;
+  }
+  
+  .solution .control .navigator {
+    width: 100% !important;
+    text-align: left;
+  }
+  
+  
+  .swiper-slide img {
+    height: 321.98px;
+    width: 100%;  
+    max-width: 100%;
+    object-fit: cover;  
+    object-position: center;  
+    overflow: hidden;
+  }
+  
+  }
+  
+  /* TABLET */
+  @media ( max-width:768px ) {
+  .title-service {
+    font-size: 28px;
+    padding: 28px;
+  }
+  .service-item span {
+    font-size: 16px;
+  }
+  .service-item p {
+    font-size: 12px;
+  }
+  .nav-content {
+    padding-top: 60px;
+  }
+  .container-fluid {
+    width: 100% !important;
+  }
+  .vh-right-phone {
+    display: block;
+  }
+  .vh-right-web {
+    display: none;
+  }
+  
+  .text-net, .text-net3 {
+    font-size: 16px !important; 
+    padding-left: 10px;
+  }
+  .text-net-desc {
+    font-size: 6px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  
+  .text-net2 {
+    font-size: 6px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  
+  }
+  
+  
+  /* mobel  */
+  @media (max-width: 640px) {
+  
+  .nav-box-view .navbar > .container {
+    position: relative;
+  }
+  
+  .nav-box-view .navbar > .container:after {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    display: block;
+    width: calc(100% + var(--bs-gutter-x));
+    height: calc(100% + 16px);
+    top: -8px;
+    left: calc(-1 * var(--bs-gutter-x));
+    background-color: rgba(22, 22, 22, 0.9);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  
+  
+  .nav-box-view .navbar > .container > * {
+  position: relative;
+  z-index: 10;
+  }
+  
+  .nav-box-view {
+    background-color: 22, 22, 22, 0.9;
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .nav-box-view .navbar-nav {
+    transform: none;
+    padding: 32px 16px;
+  }
+  .nav-box-view .navbar > .container {
+    position: relative;
+  }
+  .nav-box-view .navbar > .container > * {
+    position: relative;
+    z-index: 10;
+  }
+  .nav-item {
+    margin-inline-start: 0 !important;
+  }
+  .nav-item .subnav-group {
+    display: flex !important;
+    position: static;
+    transform: none;
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+  .nav-item .subnav-group:before {
+    content: unset;
+  }
+  .nav-item .subnav-group-title {
+    line-height: 1em;
+  }
+  .nav-item .subnav-group-item {
+    width: 50%;
+    margin-right: 0 !important;
+    margin-bottom: 8px;
+  }
+  .nav-item.simple .subnav-group {
+    display: flex !important;
+    position: static;
+    transform: none;
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-box-view.active {
+    height: 72px;
+  }
+  
+  .nav-box-view .navbar-collapse.show {
+    height: calc(100vh - 60px);
+    margin-top: 6px;
+  }
+  
+  .nav-box-view .navbar-collapse {
+    transition: all 0.125s linear;
+    overflow: auto;
+    overflow-x: hidden;
+    
+  }
+  
+  
+  .navbar .container {
+    margin-left: 12px !important;
+  }
+  
+  
+  
+  .title-c {
+    font-size: 18px;
+  }
+  
+  .desc-c {
+    font-size: 12px;
+  }
+  
+  
+  .uniq-apps .content {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .uniq-apps .app-intro-wrapper {
+    width: 70%;
+    margin-right: 0;
+    padding-right: 12px;
+  }
+  .uniq-apps .app-intro {
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 12px;
+  }
+  .uniq-apps .app-intro li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .uniq-apps .app-intro li + li {
+    margin-top: 16px;
+  }
+  .uniq-apps .app-intro .title {
+    font-size: 24px;
+    margin-bottom: 0.3em;
+  }
+  .uniq-apps .app-intro .desc {
+    font-size: 12px;
+  }
+  .uniq-apps .slider {
+    width: 30%;
+    padding-left: 12px;
+  }
+  .uniq-apps .slider .app-thumbs {
+    flex-wrap: wrap;
+  }
+  .uniq-apps .slider .app-thumbs li {
+    width: 100%;
+    margin-right: 0;
+  }
+  .uniq-apps .slider .app-thumbs li + li {
+    margin-top: 16px;
+  }
+  .uniq-apps .controls {
+    display: none;
+  }
+  
+  .uniq-apps .slider .controls {
+    display: none;
+  }
+  .uniq-apps .app-intro .title-u {
+    font-size: 24px;
+    margin-bottom: 0.3em;
+    padding: 0px !important;
+  }
+  .uniq-apps .app-intro .desc {
+    font-size: 12px;
+  }
+  
+  .uniq-apps .app-intro li {
+    height: 136px;
+  }
+  
+  .uniq-apps .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+    
+    
+    
+  
+  .solution .control{
+    display: none;
+  }
+  
+  .solution .case-list {
+    --case-thumb-width: 88px;
+    flex-wrap: wrap; 
+  }
+  
+  .solution .case-list li {
+    width: 100%;
+    height: unset;
+  }
+  .solution .case-list li > .wrapper .desc {
+    font-size: 14px;
+  }
+  
+  .solution .case-list li > .wrapper .title {
+    margin-bottom: 8px;
+  }
+  
+  .solution .case-list li > .wrapper .title .main {
+    font-size: 24px;
+    margin-right: 0.3em;
+  }
+  
+  .solution .case-list li > .wrapper .title .second {
+    font-size: 16px;
+  }
+  
+  .solution .case-list li > .wrapper .thumb img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .solution .case-list li > .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .solution .case-list li > .wrapper .thumb {
+    margin-right: 24px;
+    border-radius: 10px;
+  }
+  
+  .solution .case-list li + li {
+    margin-top: 16px;
+  }
+    
+  .title-s, .title-ai {
+    font-size: 28px;
+  }
+  .title-core {
+    font-size: 48px;
+  }
+  .desc-core {
+    font-size: 24px;
+    padding-bottom: 100px !important;
+  }
+  .title-smart  {
+    font-size: 40px;
+  }
+  
+  .bg-left {
+    display: none;
+  }
+  .bg-right {
+    width: 100%;
+  }
+  
+  .desc-chat {
+    font-size: 16px;
+  }
+  .padding-btom-enjoy {
+    padding-bottom: 0px !important;
+  }
+  
+  .title-plc {
+    font-size: 48px;
+    line-height: 120px;
+  }
+  
+  .desc-plc {
+    font-size: 16px;
+  }
+  
+  .plc img {
+    width: 240px;
+  }
+  
+  #plc {
+    height: auto;
+    background-size: auto 60% !important;
+  }
+  
+  
+    
+    
+    
+  
+  .footer .container {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .footer .meta-list {
+    display: block;
+    height: auto;
+    font-size: 12px;
+  }
+  .footer .meta-list .title {
+    margin-bottom: 8px;
+  }
+  .footer .meta-list li {
+    margin-bottom: 16px;
+  }
+  .footer .app-list {
+    display: block;
+    height: auto;
+  }
+  .footer .app-list li {
+    margin-bottom: 16px;
+  }
+  .footer .app-list li .title {
+    font-size: 12px;
+  }
+  .footer .app-list li:first-child {
+    margin-right: 60px;
+  }
+  .footer .app-list li:first-child:after {
+    content: unset;
+  }
+  .footer .copyright {
+    font-size: 12px;
+    margin-bottom: 1em;
+  }
+  .footer .site-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer .site-links li {
+    font-size: 12px;
+    margin: 0.4em 0.75em;
+  }
+  }
+  
+  @media (max-width: 576px) {
+  .col-gambar {
+    background-image: url("./assets/images/ai-bailing@2x.webp");
+    background-repeat: no-repeat;
+    background-size: 276px 172px;
+    background-position: right bottom;
+    padding-bottom: 106px;
+  }
+  
+  .net2 {
+    margin-left: calc(-.5* var(--bs-gutter-x)) !important;
+  }
+  
+  .text-net, .text-net3 {
+    font-size: 28px !important; 
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+  }
+  .text-net-desc {
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+    font-weight: 400 !important;
+    padding-top: 90px !important;
+    font-size: 16px !important;
+  }
+  
+  .text-net2 {
+    font-weight: 700;
+    left: 50%; 
+    max-width: 270px;
+    transform: translateX(-50%);
+    position: absolute; 
+    top: 0;
+    width: 100%; 
+    line-height: 1.5;
+    font-weight: 400 !important;
+    padding-top: 90px !important;
+    font-size: 16px !important;
+  }
+  
+  .net2 .g2 {
+    width: 100% !important;
+  }
+  
+  .text-net3 {
+    transform: translateX(-45%) !important;
+  }
+  }
+  
+  
+  @media (max-width: 320px) {
+      
+  .text-net, .text-net3 {
+    font-size: 22px; 
+    padding-left: 10px;
+  }
+  .text-net-desc {
+    font-size: 12px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  
+  .text-net2 {
+    font-size: 12px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  .text-net21 {
+    left: 50%; 
+    transform: translateX(-48%);
+  }
+  
+  .desc-chat {
+    font-size: 11px;
+  }
+  }
+  
+  @media (max-width: 1200px) and (min-width: 769px) {
+  .gambar{
+    margin-left: auto ;
+    margin-top: auto;
+    width: 70%;
+  }
+  
+  .text-net, .text-net3 {
+    font-size: 28px !important; 
+    padding-left: 10px;
+  }
+  .text-net-desc {
+    font-size: 16px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  
+  .text-net2 {
+    font-size: 16px !important;
+    padding-top: 80px !important;
+    padding-left: 10px;
+  }
+  
+  .text-net21 {
+    left: 50%; 
+    transform: translateX(-25%);
+  }
+  }
+  
+  
+  @media (max-width: 768px) and (min-width: 576px) {
+  .text-net2 {
+    max-width: 150px;
+  }
+  .text-net2 {
+    transform: translateX(-10%); 
+    padding-top: 70px !important;
+    font-size: 12px !important;
+  }
+  .text-net3 {
+    transform: translateX(-6%); 
+  }
+  .text-net4 {
+    transform: translateX(-40%); 
+    max-width: 10000px !important;
+  }
+  .text-net {
+    padding-left: 20px;
+  }
+  .text-net-desc {
+    padding-left: 20px;
+    padding-top: 70px !important;
+    font-size: 12px !important;
+  }
+  .text-net1 {
+    padding-left: 0px !important;
+  }
+  
+  }
+  
+  @media (min-width: 1400px) {
+    
+  .text-net1 {
+      max-width: 10000px !important;
+  }
+  
+  .text-net2 {
+    left: 50%; 
+    max-width: 1000px;
+    transform: translateX(-22%); 
+  }
+  .text-net2-1 {
+    left: 50%; 
+    max-width: 1000px;
+    transform: translateX(-21%); 
+  }
+  
+  .text-net21 {
+    left: 50%; 
+    max-width: 300px;
+    transform: translateX(-22%);
+  }
+  
+  }
+  
+  
+</style>
+
 </head>
 <body >
     
 
   <!-- navbar start -->
-  <div class="content-view">
-  <div class="nav-box-view">
+<div class="content-view">
+   <div class="nav-box-view">
       <nav class="navbar navbar-expand-lg">
           <div class="container">
 
@@ -101,11 +2015,12 @@
                             <li class="subnav-group-item">
                                 <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧酒店</a></p>
                                 <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧租住</a></p>
+                                <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧全屋</a></p>
+                                <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧康养</a></p>
                             </li>
-                            <li class="subnav-group-item">
-                              <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧全屋</a></p>
-                              <p class="subnav-group-title" ><a href="/index/Index/waiting">智慧康养</a></p>
-                            </li>
+                            <!-- <li class="subnav-group-item">
+                            
+                            </li> -->
                           </ul>
                         </li>
 
@@ -127,6 +2042,7 @@
   </div>
   <!-- navbar end -->
 
+<div class="content-view">
   <!-- swiper -->
   <section>
     <div class="swiper-container ">
@@ -155,8 +2071,8 @@
   <!-- X AIoT -->
   <section class="py-5" style="background-color: #f5f5f5;">
     <div class="container" style="padding-left: 25px; padding-right: 25px;">
-      <h5 class="sec-tittle text-center" style="font-weight: 500;">Connect X AIoT</h5>
-      <div class="row pt-4">
+      <h5 class="title-s text-center">Connect X AIoT</h5>
+      <div class="row pt-0 pt-md-4">
 
         <div class="col-md-4">
           <div class="row py-3 py-md-0">
@@ -164,8 +2080,8 @@
               <img src="./assets/images/connect-x-1@2x.webp" width="98%" alt="">
             </div>
             <div class="col-8 col-md-12">
-              <h4 class="text-tittle text-start pt-4 pb-1" style="font-weight: 400;">AIoT核心连接API</h4>
-              <p class="text-base">基于行业最佳实践,提供统一的用户、设备、权限、空间模型,在智能家庭及其他智能化商业领域内实现代码高度可复用。</p>
+              <h4 class="title-c text-start pt-0 pt-md-4 pb-1" style="font-weight: 400;">AIoT核心连接API</h4>
+              <p class="text-base desc-c">基于行业最佳实践,提供统一的用户、设备、权限、空间模型,在智能家庭及其他智能化商业领域内实现代码高度可复用。</p>
             </div>
           </div>
         </div>
@@ -176,8 +2092,8 @@
               <img src="./assets/images/connect-x-2@2x.webp" width="98%" alt="">
             </div>
             <div class="col-8 col-md-12">
-              <h4 class="text-start pt-4 pb-1" style="font-weight: 400;"">行业PaaS</h4>
-              <p class="text-base">提供面向丰富场景的模块化开放能力,按需开通,加速支持客户实现灵活自主的差异化业务或行业解决方案</p>
+              <h4 class="title-c text-start pt-0 pt-md-4 pb-1" style="font-weight: 400;"">行业PaaS</h4>
+              <p class="text-base desc-c">提供面向丰富场景的模块化开放能力,按需开通,加速支持客户实现灵活自主的差异化业务或行业解决方案</p>
             </div>
           </div>
         </div>
@@ -188,8 +2104,8 @@
           <img src="./assets/images/connect-x-3@2x.webp" width="98%" alt="">
           </div>
           <div class="col-8 col-md-12">
-            <h4 class="text-start pt-4 pb-1" style="font-weight: 400;">云开发平台</h4>
-            <p class="text-base">支持多项目、多租户，灵活配置与管理的云开发控制台</p>
+            <h4 class="title-c text-start pt-0 pt-md-4 pb-1" style="font-weight: 400;">云开发平台</h4>
+            <p class="text-base desc-c">支持多项目、多租户，灵活配置与管理的云开发控制台</p>
           </div>
           </div>
         </div>
@@ -197,30 +2113,31 @@
       </div>
     </div>
   </section>
+
   <!-- X AIoT -->
 
   <!-- uniq stuff  -->
   <section class="section dark uniq-apps">
     <div class="container">
-      <h5 class="text-center py-4" style="font-size: 48px;">功能独特、体验优质的智能APP</h5>
+      <h5 class="text-center py-4 title-s">功能独特、体验优质的智能APP</h5>
       <div class="uniqap content">
         <div class="app-intro-wrapper">
           <ul class="app-intro">
             <li>
-              <div class="py-4" style="font-size: 38px; line-height: 1.6em;">App自助开发</div>
+              <div class=" title-u">App自助开发</div>
               <div class="desc">
                 自由灵活地使用不同场景品类的 SDK打逅独一无二的智能APP。
               </div>
             </li>
             <li>
-              <div class="py-4" style="font-size: 38px; line-height: 1.6em;">智能小程序</div>
+              <div class=" title-u">智能小程序</div>
               <div class="desc">
                 为智能 APP
                 提供不止于控制的更多智能化应用场景,与智能产品深度结合,综合市场受争力,创造更多商业机会。
               </div>
             </li>
             <li>
-              <div class="py-4" style="font-size: 38px; line-height: 1.6em;">智居 Life</div>
+              <div class=" title-u">智居 Life</div>
               <div class="desc">
                 设备近程控制、场景随心打造，开启你的智慧生活
               </div>
@@ -254,54 +2171,155 @@
       </div>
     </div>
   </section>
+
   <!-- uniq stuff ends -->
   
+  <!-- solution -->
+  <section class="section solution py-0-py-sm-5 pt-4 pt-sm-0">
+    <div class="container">
+      <h5 class="text-center py-3 pb-4 title-s">快速构建专属行业智能化解决方案</h5>
+      <div class="content">
+        <div class="case-list-container">
+          <ul class="case-list">
+            <li>
+              <div class="wrapper">
+                <div class="thumb">
+                  <img src="./assets/images/solution-1-gallery-1@2x.webp" />
+                </div>
+                <div class="detail">
+                  <div class="title t-solution" style="margin-top: 0px !important;">
+                    <div class="main">智慧酒店</div>
+                    <div class="second">Smart Hotel</div>
+                  </div>
+                  <div class="desc">
+                    提供从智慧客房、智慧前台到智慧运营等酒店全场景品牌赋能，推进酒店行业数智化变革
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="wrapper">
+                <div class="thumb">
+                  <img src="./assets/images/solution-2-gallery-1@2x.webp" />
+                </div>
+                <div class="detail">
+                  <div class="title t-solution" style="margin-top: 0px !important;">
+                    <div class="main">智慧人居</div>
+                    <div class="second">Smart Living</div>
+                  </div>
+                  <div class="desc">
+                    打造智慧舒适的居住环境，让生活更智能、更舒心。
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="wrapper">
+                <div class="thumb">
+                  <img src="./assets/images/solution-3-gallery-1@2x.webp" />
+                </div>
+                <div class="detail">
+                  <div class="title t-solution" style="margin-top: 0px !important;">
+                    <div class="main">智慧公寓</div>
+                    <div class="second">Smart Apartment</div>
+                  </div>
+                  <div class="desc">
+                    提供从租控授权、租务运营到园区管理等全方位租住解决方案，驱动租住行业智慧转型
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="wrapper">
+                <div class="thumb">
+                  <img src="./assets/images/solution-4-gallery-1@2x.webp" />
+                </div>
+                <div class="detail">
+                  <div class="title t-solution" style="margin-top: 0px !important;">
+                    <div class="main">智慧康养</div>
+                    <div class="second">Smart Health Care</div>
+                  </div>
+                  <div class="desc">
+                    一站式智慧康养解决方案，赋能养老行业，打造智慧养老场景
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="control">
+          <div class="navigator">
+            <a class="prev"><span>test</span></a>
+            <a class="next"><span>test</span></a>
+          </div>
+          <div class="thumb-list-container">
+            <div class="thumb-list">
+              <div class="thumb-item">
+                <img src="./assets/images/solution-2-gallery-2@2x.webp" />
+              </div>
+              <div class="thumb-item">
+                <img src="./assets/images/solution-3-gallery-2@2x.webp" />
+              </div>
+              <div class="thumb-item">
+                <img src="./assets/images/solution-4-gallery-2@2x.webp" />
+              </div>
+              <div class="thumb-item">
+                <img src="./assets/images/solution-1-gallery-2@2x.webp" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- solution -->
+
   <!--ai stuff  -->
-  <section class="dark-ai py-5">
-    <h1 class="text-center mt-4 mb-5" style="font-size: 43px;">基于AI大模型构建强大的智能语音能力</h1>
+  <section class="dark-ai pb-4  pb-sm-5 pt-0 pt-sm-3">
     <div class="container p-3 box-bg rounded-0 border-0">
+      <h5 class="title-ai text-center mt-4 mb-5">基于AI大模型构建强大的智能语音能力</h5>
         <div class="container">
           <div class="row">
-            <div class="col pb-4 box me-0 me-lg-3">
+            <div class="col-12 col-sm pb-4 box me-0 me-sm-3 my-3 my-sm-0">
                 <div class="title text-start ms-4">AI语音平台</div>
                 <div class="row px-5">
-                  <div class="col text-center">
-                    <div class="icon mt-2"><img src="./assets/images/ai-voice@2x.webp"></div>
+                  <div class="col-6 text-center">
+                    <div class="icon mt-2"><img src="./assets/images/ai-voice@2x.webp" width="100%"></div>
                     <div class="label mt-4">小白 &nbsp;</div>
                   </div>
-                  <div class="col text-center">
-                    <div class="icon mt-2"><img src="./assets/images/ai-xiaoai@2x.webp"></div>
+                  <div class="col-6 text-center">
+                    <div class="icon mt-2"><img src="./assets/images/ai-xiaoai@2x.webp" width="100%"></div>
                     <div class="label mt-4">小爱&nbsp;</div>
                   </div>
                 </div>
             </div>
-            <div class="col box ms-0 ms-lg-3">
+            <div class="col-gambar col-12 col-sm box ms-0 ms-sm-3 my-3 my-sm-0">
               <div class="title mx-3">百灵AI</div>
                 <div class="desc mx-3">百灵AI大模型提供多模态能力，为垂直行业打造丰富的业务体验</div>
-              <img src="./assets/images/ai-bailing@2x.webp" class="gambar" width="50%">
             </div>
           </div>
       </div>
     </div>
-    <div class="container p-3 box-bg rounded-0 border-0">
+    <div class="container pt-0 pt-sm-3 box-bg rounded-0 border-0">
         <div class="container">
           <div class="row">
             <div class="col box pb-5 pt-2">
                 <div class="title text-start ms-4">AI应用</div>
                 <div class="row text-center px-4">
-                  <div class="col-3">
+                  <div class="col-6 col-sm-3">
                     <img class="py-1" src="./assets/images/ai-voice-recon@2x.webp"  width="24%" alt="">
                     <h5 class="py-3">语音识别</h5>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6 col-sm-3">
                     <img class="py-1" src="./assets/images/ai-voice-compose@2x.webp"  width="24%" alt="">
                     <h5 class="py-3">语音合成</h5>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6 col-sm-3">
                     <img class="py-1" src="./assets/images/ai-voice-dup@2x.webp"  width="24%" alt="">
                     <h5 class="py-3">声音复刻</h5>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6 col-sm-3">
                     <img class="py-1" src="./assets/images/ai-charator@2x.webp"  width="24%" alt="">
                     <h5 class="py-3">角色扮演</h5>
                   </div>
@@ -311,30 +2329,31 @@
         </div>
       </div>
   </section>
-  <!-- ai stuff end -->
+
+  <!-- ai stuff ends -->
 
   <!-- core intelligent hardware start -->
-  <section class="pt-5 pb-1 hardware " id="hardware" style="background-image: url(./assets/images/core-background.png@2x.webp); object-fit: cover;
-  background-position: center center;">
+  <section class="pt-5 pb-1" id="hardware">
     <div class="container text-center text-light">
-      <h1 class="py-5" style="font-size: 98px;">核心智能硬件</h1>
-      <h4 class="mt-5 pb-3" style="font-size: 42px;">智能家庭主机 | 悦享中控屏 | 智能无线网关 | 智能PLC网关</h4>
+      <h1 class="py-5 title-core">核心智能硬件</h1>
+      <h4 class="desc-core mt-5 pb-sm-3">智能家庭主机 | 悦享中控屏 | 智能无线网关 | 智能PLC网关</h4>
     </div>
   </section>
+
   <!-- core intelligent hardware ends -->
 
   <!-- Smart home host start -->
-  <section class="py-5" id="smarthome">
-    <div class="container pb-5">
-      <div class="row align-items-center py-5">
-        <div class="col-7 py-0 px-0">
+  <section class="py-0 py-sm-5" id="smarthome">
+    <div class="container pb-0 pb-sm-5">
+      <div class="row align-items-center py-0 py-sm-5">
+        <div class="col-12 col-sm-7 py-0 px-0">
           <div class=" py-5 ">
             <img src="./assets/images/home-core-thumb@2x.webp" width="100%" alt="">
           </div>
         </div>
-        <div class="col-5">
-          <h1 class="text-start py-4" style="font-size: 66px">智能家庭主机</h1>
-            <div class="py-4">
+        <div class="col-12 col-sm-5">
+          <h1 class="title-smart text-start py-0 py-sm-4">智能家庭主机</h1>
+          <div class="py-4">
             <h4 class="text-start py-2" style="font-size: 24px; font-weight: 400;">AIoT-PLC技术稳定性99.9%</h4>
             <h4 class="text-start py-2" style="font-size: 24px; font-weight: 400;">全屋WiFi6覆盖无死角</h4>
             <h4 class="text-start py-2" style="font-size: 24px; font-weight: 400;">有线及无线完美结合</h4>
@@ -343,136 +2362,130 @@
       </div>
     </div>
   </section>
-  <!-- Smart home host  end -->   
+  <!-- Smart home host ends -->   
 
-  <!-- Enjoy the central control screen start  -->
+  <!-- enjoy start  -->
   <section id="enjoy">
-    <div class="bg-full">
-      <div class="bg-left"></div>
-      <div class="bg-right"></div>
-    </div>
+      <div class="bg-full">
+        <div class="bg-left"></div>
+        <div class="bg-right"></div>
+      </div>
 
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <div class="col-12 pt-3">
-            <h1 class="text-light" style="font-size: 48px;">悦享中控屏</h1>
-          </div>
-          <div class="col-8 col-lg-12">
-            <h4 class="text-light mt-4" style="font-size: 22px; max-width: 470px; line-height: 1.5;">一屏万象，集成家居控制、可视对讲、社区物业等多业态服务</h4>
-          </div>
-            <div class="col-12" style="padding-top: 50px; padding-bottom: 60px;">
-              <img src="./assets/images/ct-thumb@2x.webp" alt="">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="col-12 pt-3">
+              <h1 class="text-light aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true" style="font-size: 48px;">悦享中控屏</h1>
             </div>
-        </div>
+            <div class="col-8 col-lg-12">
+              <h4 class="text-light mt-4 aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true" style="font-size: 22px; max-width: 470px; line-height: 1.5;">一屏万象，集成家居控制、可视对讲、社区物业等多业态服务</h4>
+            </div>
+              <div class="padding-btom-enjoy col-12 aos-init " data-aos="fade-up" data-aos-delay="100" data-aos-duration="700" data-aos-once="true" style="padding-top: 50px; padding-bottom: 60px;">
+                <img src="./assets/images/ct-thumb@2x.webp" alt="">
+              </div>
+          </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="col-5 offset-2 my-5">
-            <div class="chat text-center  bg-light bg-opacity-25 align-items-center">
-              <h2 style="font-size: 28px; font-weight:400;">灵动UI界面</h2>
+          <div class="col-12 col-lg-6">
+            <div class="col-5 offset-2 my-3 my-sm-5">
+              <div class="chat text-center  bg-light bg-opacity-25 align-items-center aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+                <h2 class="desc-chat">灵动UI界面</h2>
+              </div>
             </div>
-          </div>
-          <div class="col-5 offset-6 my-5">
-            <div class="chat text-center  bg-light bg-opacity-25 align-items-center">
-              <h2 style="font-size: 28px; font-weight:400;">人性化体验</h2>
+            <div class="col-5 offset-7 offset-sm-6 my-5">
+              <div class="chat text-center  bg-light bg-opacity-25 align-items-center aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+                <h2 class="desc-chat">人性化体验</h2>
+              </div>
             </div>
-          </div>
-          <div class="col-6 offset-3 my-5">
-            <div class="chat text-center  bg-light bg-opacity-25 align-items-center">
-              <h2 style="font-size: 28px; font-weight:400;">多种控制方式</h2>
+            <div class="col-6 offset-3 my-5">
+              <div class="chat text-center  bg-light bg-opacity-25 align-items-center aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+                <h2 class="desc-chat">多种控制方式</h2>
+              </div>
             </div>
-          </div>
-          <div class="col-5 offset-7 my-5">
-            <div class="chat text-center  bg-light bg-opacity-25 align-items-center" style="margin-left: 15px;">
-              <h2 style="font-size: 28px; font-weight:400;">支持多语言</h2>
+            <div class="col-6 col-sm-5 offset-6 offset-sm-7 my-5">
+              <div class="chat text-center  bg-light bg-opacity-25 align-items-center aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true" style="margin-left: 15px;">
+                <h2 class="desc-chat">支持多语言</h2>
+              </div>
             </div>
-          </div>
-          <div class="col-7 offset-1 my-5">
-            <div class="chat text-center  bg-light bg-opacity-25 align-items-center" style="margin-left: 27px;">
-              <h2 style="font-size: 28px; font-weight:400;">支持百灵智能AI</h2>
+            <div class="col-7 offset-1 my-5">
+              <div class="chat text-center  bg-light bg-opacity-25 align-items-center aos-init " data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true" style="margin-left: 27px;">
+                <h2 class="desc-chat">支持百灵智能AI</h2>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
-  <!-- Enjoy the central control screen ends -->
+  <!-- enjoy ends -->
 
-  <!-- Smart wireless gateway () -->
-  <section class="py-5" id="smartwire">
-    
-    <div class="container" >
-      <img src="./assets/images/netgate-bg.webp" alt="Description of image" class="position-absolute top-0 end-0 imgfaq offset-1" 
-      style="right: 20px;
-      z-index: -1;
-        width: 57%;  ">
+  <!-- wireless ends () -->
+  <section class="py-sm-5" id="smartwire">
+  
+    <div class="container pb-3 pb-sm-5" >
+      <img src="./assets/images/netgate-bg.webp" alt="Description of image" class="imgnet position-absolute top-0 end-0 imgfaq offset-1">
       <h1 class="text-black py-2" style="font-size: 38px;">智能无线网关</h1>
       <h4 class="text-black" style="font-size: 22px; font-weight: 400;">内置ZigBee3.0网关，强大网关能力，轻松智能联动全屋设备</h4>
 
-      <div class="row align-items-end pt-5 pb-4">
+      <div class="row align-items-end pt-1 pt-sm-5 pb-0 pb-sm-4">
 
-        <div class="col-4">
+        <div class="col-12 col-sm-4 mt-3 mt-sm-0 aos-init " data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
           <div style="position: relative;">
             <img src="./assets/images/netgate-1@2x.webp" width="100%" alt="" style="display: block;">
             <h1 class="text-net text-net1 text-center text-light" style="padding-top: 100px;">支持 ZigBee3.0协议</h1>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-sm-4 mt-3 mt-sm-0 " data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
           <div style="position: relative;">
             <img src="./assets/images/netgate-3@2x.webp" width="100%" alt="" style="display: block;">
             <h1 class="text-net  text-dark" style="padding-top: 45px;">完整解决方案</h1>
-            <p class="text-net  text-dark" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">Complete Solution</p>
+            <p class="text-net-desc  text-dark">Complete Solution</p>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-sm-4 mt-3 mt-sm-0" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
           <div style="position: relative;">
             <img src="./assets/images/netgate-4@2x.webp" width="100%" alt="" style="display: block;">
             <h1 class="text-net text-start text-light" style="padding-top: 45px;">安全性高</h1>
-            <p class="text-net text-start text-light" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">High security</p>
+            <p class="text-net-desc text-start text-light">High security</p>
           </div>
         </div>
       </div>
       
-        <div class="row" style="margin-left: -200px !important; ">
-          <div class="col-5">
-            <div style="position: relative;">
+        <div class="net2 row">
+          <div class="col-12 col-sm-5 mt-3 mt-sm-0" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+            <div class="g1">
               <img src="./assets/images/netgate-2@2x.webp" width="100%" alt="" style="display: block;">
-              <h1 class="text-net3 text-start text-light" style="padding-top: 45px;">低功耗低延迟</h1>
-              <p class="text-net2 text-start text-light" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">Low power consumption and low latency</p>
+              <h1 class="text-net3 text-net31 text-start text-light" style="padding-top: 45px;">低功耗低延迟</h1>
+              <p class="text-net2 text-net21 text-start text-light" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">Low power consumption and low latency</p>
             </div>
           </div>
-          <div class="col-5">
-            <div class="" style="position: relative; width: 109%;">
+          <div class="col-12 col-sm-5 mt-3 mt-sm-0 " data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000" data-aos-once="true">
+            <div class="g2" >
               <img class="w-100" src="./assets/images/netgate-5@2x.webp" width="100%" alt="" style="display: block;">
-              <h1 class="text-net3 text-start text-light" style="padding-top: 45px;">开放性兼容性更高</h1>
-              <p class="text-net2 text-start text-light" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">Higher openness and compatibility</p>
+              <h1 class="text-net3 text-net4 text-start text-light" style="padding-top: 45px;">开放性兼容性更高</h1>
+              <p class="text-net2 text-net2-1 text-net4 text-start text-light" style="font-weight: 400 !important; padding-top: 110px; font-size: 22px;">Higher openness and compatibility</p>
             </div>
           </div>
         </div>
       </div>
   </section>
-  <!-- Smart wireless gateway () -->
 
-  <!-- box thing -->
-  <section class="py-5 plc" id="plc" 
-  style="background: #000  url(./assets/images/plc-bg@2x.webp) no-repeat scroll center bottom !important;
-  height: 1000px;">
+
+  <!-- wireless ends -->
+
+  <!-- PLC start -->
+  <section class="py-5" id="plc">
     <div class="container">
-      <h1 class="text-light text-center" style="font-size: 86px;">智能PLC网关</h1>
-      <div class="desc-plc mt-4" style="
-       text-align: center;
-      color: white;
-      font-size: 24px;
-      line-height: 32px;">
+      <h1 class="text-light title-plc text-center">智能PLC网关</h1>
+      <div class="desc-plc mt-4">
         <p>智能空间的强大中枢指挥官 | 响应更迅捷 信号更稳定</p>
         <p>支持OTA升级 快速获得新能力 | 点通信距离2000米 大宅覆盖无压力 | 兼容联动无线产品</p>
       </div>
-      <div class="text-center py-5">
+      <div class="plc text-center py-5 " data-aos="fade-in" data-aos-delay="300" data-aos-duration="800" data-aos-once="true"  >
         <img src="./assets/images/plc-device@2x.webp" width="33%" alt="">
       </div>
     </div>
   </section>
-  <!-- box thing -->
+
+  <!-- PLC ends -->
 
   <!-- footer  -->
   <section class="footer">
@@ -529,9 +2542,10 @@
       </div>
     </div>
   </section>
+
   <!-- footer -->
 
-
+</div>
 
 
 <!-- JQuery -->
@@ -539,6 +2553,7 @@
 
 <!-- Swiper JS -->
 <script src="./swiper-11.1.9/package/swiper-bundle.min.js"></script>
+<script src="./javascript/xlb.scroll.js"></script>
 
 <!-- Bootstrap JS -->
 <script src="./bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
@@ -546,248 +2561,130 @@
 <!-- AOS CDN JS -->
 <script src="https://unpkg.com/aos@next/dist/aos.js" type="text/javascript"></script>
 
-<!-- 
-
 <script>
+  // UNIQ APPS
   (() => {
-    const itemTotal = $('.app-thumbs li').length;
-    const itemWidth = $('.uniq-apps .app-intro li').eq(0).width();
-
-    const activeApp = (idx) => {
+      const itemtotal = $(`.app-thumbs li`).length;
+      const itemWidth = $(".uniq-apps .app-intro li").eq(0).width();
+  
+      const activeApp = (idx) => {
         console.log("::>> active app", idx);
-        
-        // Move text
-        $(".uniq-apps .app-intro").css(
-            "transform",
-            `translateX(${-idx * itemWidth}px)`
-        );
-
-        // Move images
-        const orders = new Array(itemTotal).fill(null).map((_, index) => index);
+        const orders = new Array(itemtotal).fill(null).map((_, idx) => idx);
         const ends = orders.splice(0, idx);
         orders.push(...ends);
-
-        const items = orders.map(index => {
-            return $(`.app-thumbs li[data-idx="${index + 1}"]`);
+        const items = orders.map((idx) => {
+          return $(`.app-thumbs li[data-idx="${idx + 1}"]`);
         });
-
-        $('.uniq-apps .app-thumbs').html('');
-        items.forEach(item => $('.app-thumbs').append(item));
-    };
-
-    const indicators = $('.uniq-apps .slider .indicator li').click(function () {
-        indicators.removeClass('active');
-        $(this).addClass('active');
+  
+        $(`.uniq-apps .app-thumbs`).html("");
+        items.forEach((item) => $(`.app-thumbs`).append(item));
+        //   $(`.app-thumbs`).append(items);
+  
+        $(".uniq-apps .app-intro").css(
+          "transform",
+          `translateX(${-idx * itemWidth}px)`
+        );
+      };
+  
+      const indicators = $(".uniq-apps .slider .indicator li").click(function () {
+        indicators.removeClass("active");
+        $(this).addClass("active");
         const idx = indicators.index(this);
         activeApp(idx);
-    });
-
-    $('.uniq-apps .btns a').click(function () {
-        let idx = indicators.index(indicators.filter('.active'));
-
-        console.log('::>> current', idx);
-        if ($(this).hasClass('prev')) {
-            idx--;
-            console.log('::>> prev', idx);
-        } else {
-            idx++;
-            console.log('::>> next', idx);
-        }
-        if (idx < 0) idx = itemTotal - 1;
-        else if (idx >= itemTotal) idx = 0;
-
-        activeApp(idx);
-
-        indicators.removeClass('active');
-        indicators.eq(idx).addClass('active');
-    });
-})();
-
-
-
-
-
-  
-  $(window).on('load', function () {
-    $(".inner-header-icon").click(function () {
-        // Cek apakah lebar layar di bawah 768px
-        if ($(window).width() < 768) {
-            $(this).toggleClass("inner-header-icon-click inner-header-icon-out");
-            $(".inner-nav").slideToggle(250);
-  
-            // Aktifkan nav-box-view dan subnav-group saat inner-header-icon diklik
-            if ($(this).hasClass('inner-header-icon-click')) {
-                $('.nav-box-view').addClass('active'); // Aktifkan nav-box-view
-                $('.subnav-group').stop(true, true).slideDown(250).css('opacity', 1); // Slide down dan tampilkan subnav
-            } else {
-                $('.nav-box-view').removeClass('active'); // Nonaktifkan nav-box-view
-                $('.subnav-group').stop(true, true).slideUp(250).css('opacity', 0); // Slide up dan sembunyikan subnav
-            }
-        }
-    });
-  
-    $(".inner-nav").click(function () {
-        // Hanya jalankan ini jika lebar layar di bawah 768px
-        if ($(window).width() < 768) {
-            $(".inner-header-icon").click();
-        }
-    });
-  
-    $(".inner-nav a").each(function (index) {
-        $(this).css({ 'animation-delay': (index / 10) + 's' });
-    });
-  
-    const navItems = $(".navbar-nav .nav-item");
-  
-    navItems.mouseenter(function () {
-        const navHei = $(this).data('navHeight');
-        $('.nav-box-view').css('--nav-active-height', navHei || '250px');
-        $(this).addClass('active');
-  
-        if ($('.subnav-group', this).length) {
-            $('.nav-box-view').addClass('active');
-            $('.subnav-group', this).stop(true, true).slideDown(250).css('opacity', 1); // Slide down dan tampilkan
-        } else {
-            $('.nav-box-view').removeClass('active');
-        }
-    });
-  
-    $('.nav-box-view').mouseleave(function () {
-        navItems.filter('.active').removeClass('active');
-        $('.nav-box-view').removeClass('active');
-        $('.subnav-group').stop(true, true).slideUp(250).css('opacity', 0); // Slide up dan sembunyikan
-    });
-  });
-  
-  
-  
-  $(window).on('load', function () {
-    $(".inner-header-icon").click(function () {
-        $(this).toggleClass("inner-header-icon-click inner-header-icon-out");
-        $(".inner-nav").slideToggle(250);
-    });
-
-    $(".inner-nav").click(function () {
-        $(".inner-header-icon").click();
-    });
-
-    $(".inner-nav a").each(function (index) {
-        $(this).css({ 'animation-delay': (index / 10) + 's' });
-    });
-
-    const navItems = $(".navbar-nav .nav-item");
-    
-    navItems.mouseenter(function () {
-        const navHei = $(this).data('navHeight');
-        $('.nav-box-view').css('--nav-active-height', navHei || '250px');
-        $(this).addClass('active');
-        
-        if ($('.subnav-group', this).length) {
-            $('.nav-box-view').addClass('active');
-            $('.subnav-group', this).stop(true, true).slideDown(250).css('opacity', 1); // Slide down and show
-        } else {
-            $('.nav-box-view').removeClass('active');
-        }
-    });
-
-    $('.nav-box-view').mouseleave(function () {
-        navItems.filter('.active').removeClass('active');
-        $('.nav-box-view').removeClass('active');
-        $('.subnav-group').stop(true, true).slideUp(250).css('opacity', 0); // Slide up and hide
-    });
-});
-AOS.init(); 
-
-var swiper = new Swiper(".swiper-container", {
-speed: 1200,
-loop: true,
-autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-},
-allowTouchMove: true,
-threshold: 10,
-longSwipesMs: 300,
-longSwipesRatio: 0.3,
-pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-},
-on: {
-  init: function (swiper) {
-slide = this.slides.eq(0);
-slide.addClass("ani-slide");
-},
-transitionStart: function () {
-for (i = 0; i < this.slides.length; i++) {
-  slide = this.slides.eq(i);
-  slide.removeClass("ani-slide");
-}
-},
-transitionEnd: function () {
-slide = this.slides.eq(this.activeIndex);
-slide.addClass("ani-slide");
-},
-},
-});
-(() => {
-    const itemtotal = $(`.app-thumbs li`).length;
-    const itemWidth = $(".uniq-apps .app-intro li").eq(0).width();
-
-    const activeApp = (idx) => {
-      console.log("::>> active app", idx);
-      const orders = new Array(itemtotal).fill(null).map((_, idx) => idx);
-      const ends = orders.splice(0, idx);
-      orders.push(...ends);
-      const items = orders.map((idx) => {
-        return $(`.app-thumbs li[data-idx="${idx + 1}"]`);
       });
-
-      $(`.uniq-apps .app-thumbs`).html("");
-      items.forEach((item) => $(`.app-thumbs`).append(item));
-      //   $(`.app-thumbs`).append(items);
-
-      $(".uniq-apps .app-intro").css(
-        "transform",
-        `translateX(${-idx * itemWidth}px)`
-      );
-    };
-
-    const indicators = $(".uniq-apps .slider .indicator li").click(function () {
-      indicators.removeClass("active");
-      $(this).addClass("active");
-      const idx = indicators.index(this);
-      activeApp(idx);
-    });
-
-    $(".uniq-apps .btns a").click(function () {
-      let idx = indicators.index(indicators.filter(".active"));
-
-      console.log("::>> current", idx);
-      if ($(this).hasClass("prev")) {
-        idx--;
-        console.log("::>> prev", idx);
-      } else {
-        idx++;
-        console.log("::>> next", idx);
-      }
-      if (idx < 0) idx = itemtotal - 1;
-      else if (idx >= itemtotal) idx = 0;
-
-      activeApp(idx);
-
-      indicators.removeClass("active");
-      indicators.eq(idx).addClass("active");
-    });
-  })();
-
-
-
-</script>
- -->
-
+  
+      $(".uniq-apps .btns a").click(function () {
+        let idx = indicators.index(indicators.filter(".active"));
+  
+        console.log("::>> current", idx);
+        if ($(this).hasClass("prev")) {
+          idx--;
+          console.log("::>> prev", idx);
+        } else {
+          idx++;
+          console.log("::>> next", idx);
+        }
+        if (idx < 0) idx = itemtotal - 1;
+        else if (idx >= itemtotal) idx = 0;
+  
+        activeApp(idx);
+  
+        indicators.removeClass("active");
+        indicators.eq(idx).addClass("active");
+      });
+    })();
+  
+  
+  
+  // SOLUTIONS 
+    (() => {
+      const wid = window.innerWidth;
+      if (wid <= 640) return;
+  
+      const scope = $(".solution");
+      const caseTotal = $(".case-list li", scope).length;
+      const caseWidth =
+        $(".case-list li", scope).eq(0).outerWidth() +
+        parseFloat($(".case-list li").eq(0).css("margin-right"));
+      const thumbTotal = caseTotal - 1;
+  
+      // case list
+      const caseList = $(".case-list", scope);
+      const cases = caseList.html();
+      caseList.append(cases);
+      caseList.append(cases);
+      caseList.css({
+        transform: `translateX(${-caseTotal * caseWidth}px)`,
+      });
+      // Initial thumb list
+      const thumbList = $(".thumb-list", scope);
+      const thumbItemWidth =
+        $("div", thumbList).eq(0).outerWidth() +
+        parseFloat($("div", thumbList).eq(0).css("margin-right"));
+      const thumbs = thumbList.html();
+      thumbList.append(thumbs);
+      thumbList.append(thumbs);
+      thumbList
+        .css({
+          transform: `translateX(${-caseTotal * thumbItemWidth}px)`,
+        })
+        .attr({
+          "item-wid": thumbItemWidth,
+        });
+  
+      //
+      let idx = 0;
+      let lastActive = 0;
+      $(".navigator a", scope).click(function () {
+        const t = new Date().getTime();
+        if (t - lastActive < 300) return;
+  
+        if ($(this).hasClass("prev")) {
+          idx++;
+        } else {
+          idx--;
+        }
+  
+        if (idx >= caseTotal) {
+          idx = 0;
+        } else if (idx < 0) {
+          idx = caseTotal - 1;
+        }
+  
+        caseList.css({
+          transform: `translateX(${-(caseTotal + idx) * caseWidth}px)`,
+        });
+  
+        thumbList.css({
+          transform: `translateX(${-(caseTotal + idx) * thumbItemWidth}px)`,
+        });
+      });
+    })();
+  
+  </script>
+  
 <!-- Script JS -->
-<script type="text/javascript" src="./javascript/script.js"></script>
+<script type="text/javascript" src="./javascript/script-2.js"></script>
 
 </body>
 </html>
